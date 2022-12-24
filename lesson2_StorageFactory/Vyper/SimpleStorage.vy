@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MIT
 # @version ^0.3.0
 
 favoriteNumber: uint256

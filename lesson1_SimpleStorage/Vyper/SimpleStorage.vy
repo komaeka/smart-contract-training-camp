@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MIT
 # @version ^0.3.0
 
 nameToAge: HashMap[String[20],uint256]
