@@ -15,7 +15,7 @@ def __init__():
 @external
 def fund():
     minimumUSD: uint256 = 1 * 10**8
-    assert self.getConversionRate(msg.value) >= minimumUSD, "You need to spend more ETH!"
+    assert self.getConversionRate(msg.value) >= minimumUSD, "You need to spend more ETH"
     self.addressToAmountFunded[msg.sender] += msg.value
     self.funders.append(msg.sender)
 
@@ -41,8 +41,8 @@ def getConversionRate(ethAmount: uint256) -> uint256:
 @payable
 @external
 def withdraw():
-    assert msg.sender == self.owner, "You are not owner!"
-    assert self.balance > 0, "There is no ETH in this contract!"
+    assert msg.sender == self.owner, "You are not owner"
+    assert self.balance > 0, "There is no ETH in this contract"
     for funderIndex in range(10):
         if funderIndex < len(self.funders):
             funder: address = self.funders[funderIndex]

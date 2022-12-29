@@ -17,7 +17,7 @@ contract FundMe {
         uint256 minimumUSD = 1 * 10**8;
         require(
             getConversionRate(msg.value) >= minimumUSD,
-            "You need to spend more ETH!"
+            "You need to spend more ETH"
         );
         addressToAmountFunded[msg.sender] += msg.value;
         funders.push(msg.sender);
@@ -43,12 +43,12 @@ contract FundMe {
     }
 
     modifier onlyOwner() {
-        require(msg.sender == owner, "You are not owner!");
+        require(msg.sender == owner, "You are not owner");
         _;
     }
 
     function withdraw() public payable onlyOwner {
-        require(address(this).balance > 0, "There is no ETH in this contract!");
+        require(address(this).balance > 0, "There is no ETH in this contract");
         for (
             uint256 funderIndex = 0;
             funderIndex < funders.length;
